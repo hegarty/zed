@@ -7,10 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "language_models": {
+    "bedrock": {
+      "authentication_method": "named_profile",
+      "region": "us-east-1",
+      "profile": "tsh-ops"
+    }
+  },
   "agent": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "amazon-bedrock",
+      "model": "anthropic.claude-3-sonnet-20240229-v1:0"
     },
     "version": "2"
   },
