@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "format_on_save": "off",
   "language_models": {
     "bedrock": {
       "authentication_method": "named_profile",
@@ -62,5 +63,26 @@
   },
   "preview_tabs": {
     "enabled": false
+  },
+  // --- Disable all auto-formatting (Fixes Helm template issues) ---
+  "editor": {
+    "formatOnSave": false,
+    "formatOnType": false,
+    "autoIndent": "none",
+    "trimTrailingWhitespace": true
+  },
+
+  // Disable bracket-spacing auto-corrections
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingPairs": "never",
+  "editor.autoSurround": "never",
+
+  // Prevent Zed from touching {{ }} or {{- }} blocks
+  "[yaml]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingPairs": "never",
+    "editor.autoSurround": "never"
   }
 }
