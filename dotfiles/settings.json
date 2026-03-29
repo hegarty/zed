@@ -42,7 +42,7 @@
   "inlay_hints": {
     "enabled": false
   },
-  "theme": "Github Dark",
+  "theme": "GitHub Dark",
   "telemetry": {
     "metrics": false,
     "diagnostics": false
