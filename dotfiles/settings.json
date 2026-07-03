@@ -7,7 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "format_on_save": "off",
+  "use_autoclose": false,
   "language_models": {
     "bedrock": {
       "authentication_method": "named_profile",
@@ -16,6 +26,7 @@
     }
   },
   "agent": {
+    "dock": "right",
     "default_model": {
       "provider": "amazon-bedrock",
       "model": "claude-3-sonnet"
@@ -50,7 +61,7 @@
   "experimental.theme_overrides": {
     "editor.document_highlight.read_background": "#961744"
   },
-  "vim_mode": true,
+  "vim_mode": false,
   "ui_font_size": 16,
   "buffer_font_size": 14,
   "cursor_blink": false,
@@ -64,25 +75,22 @@
   "preview_tabs": {
     "enabled": false
   },
-  // --- Disable all auto-formatting (Fixes Helm template issues) ---
-  "editor": {
-    "formatOnSave": false,
-    "formatOnType": false,
-    "autoIndent": "none",
-    "trimTrailingWhitespace": true
-  },
-
-  // Disable bracket-spacing auto-corrections
-  "editor.autoClosingBrackets": "never",
-  "editor.autoClosingPairs": "never",
-  "editor.autoSurround": "never",
-
-  // Prevent Zed from touching {{ }} or {{- }} blocks
-  "[yaml]": {
-    "editor.formatOnSave": false,
-    "editor.formatOnType": false,
-    "editor.autoClosingBrackets": "never",
-    "editor.autoClosingPairs": "never",
-    "editor.autoSurround": "never"
+  "languages": {
+    "Python": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "language_servers": ["basedpyright", "ruff"]
+    },
+    "Go": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "language_servers": ["gopls"]
+    },
+    "Terraform": {
+      "format_on_save": "on"
+    },
+    "JSON": {
+      "format_on_save": "on"
+    }
   }
 }
